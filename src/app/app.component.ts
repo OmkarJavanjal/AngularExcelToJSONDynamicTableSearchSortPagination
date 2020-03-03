@@ -39,15 +39,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
-    for(const key in this.items[maxkeyItem]) {
-        const obj = {
-          key: key,
-          value: this.items[maxkeyItem][key]
-        }
-        this.propArr.push(obj);
-      }
-    
     //this.calculateIndexes();
   }
 
