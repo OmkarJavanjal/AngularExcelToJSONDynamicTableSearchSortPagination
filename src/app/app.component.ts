@@ -153,10 +153,10 @@ export class AppComponent implements OnInit {
           maxkeyItem = i;
         }
       }
-      for(const key in this.items[0]) {
+      for(const key in this.items[maxkeyItem]) {
         const obj = {
           key: key,
-          value: this.items[0][key]
+          value: this.items[maxkeyItem][key]
         }
         this.propArr.push(obj);
       }
