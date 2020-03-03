@@ -39,14 +39,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let maxkeys=0;
-    let maxkeyItem = 0;
-    for(let i = 0; i < this.items.length; i++) {
-      if(maxkeys < Object.keys(this.items[i]).length){
-        maxkeys = Object.keys(this.items[i]).length;
-        maxkeyItem = i;
-      }
-    }
+    
     for(const key in this.items[maxkeyItem]) {
         const obj = {
           key: key,
@@ -161,6 +154,14 @@ export class AppComponent implements OnInit {
       }, {});
       const dataString = JSON.stringify(jsonData);
       this.data2 = this.items = JSON.parse(dataString)[Object.keys(JSON.parse(dataString))[0]];
+      let maxkeys=0;
+      let maxkeyItem = 0;
+      for(let i = 0; i < this.items.length; i++) {
+        if(maxkeys < Object.keys(this.items[i]).length){
+          maxkeys = Object.keys(this.items[i]).length;
+          maxkeyItem = i;
+        }
+      }
       for(const key in this.items[0]) {
         const obj = {
           key: key,
